@@ -16,11 +16,19 @@ abstract class Model {
     }
 
     public function load($data) {
-        foreach($this->attributes as $name => $value) {
+        foreach ($this->attributes as $name => $value) {
             if (isset($data[$name])) {
                 $this->attributes[$name] = $data[$name];
             }
         }
+    }
+
+    public function save($table) {
+        $bean = \R::dispense($table);
+        foreach ($this->attributes as $name => $value) {
+            $bean->$name = $value;
+        }
+        return \R::store($bean);
     }
 
     public function validate($data) {
@@ -34,7 +42,14 @@ abstract class Model {
     }
 
     public function getErrors() {
-        
+        $errors  = '<ul>';
+        foreach ($this->errors as $error) {
+            foreach ($error as $item) {
+                $errors .= "<li>{$item}</li>";
+            }
+        }
+        $errors .= '</ul>';
+        $_SESSION['error'] = $errors;
     }
 
 }

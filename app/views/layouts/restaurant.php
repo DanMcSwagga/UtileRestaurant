@@ -40,7 +40,15 @@
 <!--                <li class="header-menu-unit"><a class="header-menu-link" href="#about">About</a></li>-->
                 <li class="header-menu-unit"><a class="header-menu-link" href="#menu">Menu</a></li>
                 <li class="header-menu-unit"><a class="header-menu-link" href="#contact">Contact</a></li>
-                <li class="header-menu-unit"><a class="header-menu-link" href="#register">Register</a></li>
+                <ul class="header-menu-unit user-action flex">
+                    <?php if (!empty($_SESSION['user'])): ?>
+                    <li><a href="#"><?= $_SESSION['user']['login']; ?></a></li>
+                    <li><a href="/user/logout">Log Out</a></li>
+                    <?php else: ?>
+                    <li><a href="/user/signup">Sign Up</a></li>
+                    <li><a href="/user/login">Sign In</a></li>
+                    <?php endif; ?>
+                </ul>
             </ul>
             <ul class="header-menu flex" data-aos="leftSlideLong" data-aos-duration="550" data-aos-once="true">
                 <li class="header-menu-unit">
@@ -113,6 +121,22 @@
 
 
 <div class="content">
+    <div class="registration-alert-container">
+        <div class="row">
+            <div class="col-md-12">
+                <?php if(isset($_SESSION['error'])): ?>
+                    <div class="alert alert-danger registration-alert">
+                        <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
+                    </div>
+                <?php endif; ?>
+                <?php if(isset($_SESSION['success'])): ?>
+                    <div class="alert alert-info">
+                        <?php echo $_SESSION['success']; unset($_SESSION['success']); ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
     <?=$content;?>
 </div>
 
@@ -143,12 +167,12 @@
             <div class="contact-form-container">
                 <form action='' class='form'>
                     <p class='field required half italic' data-aos="upSlideLong" data-aos-once="false">
-                        <label class='label required' for='contactname'>Name</label>
-                        <input class='text-input' id='contactname' name='contactname' required type='text'>
+                        <label class='label required' for='name-cont'>Name</label>
+                        <input class='text-input' id='name-cont' name='name-cont' required type='text'>
                     </p>
                     <p class='field required half italic' data-aos="upSlideLong" data-aos-once="false">
-                        <label class='label' for='contactemail'>Email</label>
-                        <input class='text-input' id='contactemail' name='contactemail' required type='email'>
+                        <label class='label' for='email-cont'>Email</label>
+                        <input class='text-input' id='email-cont' name='email-cont' required type='email'>
                     </p>
                     <p class='field italic' data-aos="upSlideLong" data-aos-once="false">
                         <label class='label' for='message'>Message</label>

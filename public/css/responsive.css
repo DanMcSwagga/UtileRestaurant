@@ -398,6 +398,10 @@
 		height: 30px;
 		margin: 12px;
 	}
+
+	.single-form-page-container > .curly-underline-block {
+		display: none;
+	}
 }
 
 
@@ -548,5 +552,9 @@
 	.footer-social-icon {
 		height: 30px;
 		margin: 12px;
+	}
+
+	.single-form-page-container > .curly-underline-block {
+		display: none;
 	}
 }

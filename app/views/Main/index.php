@@ -60,7 +60,7 @@
 
         <div class="specials-catalogue-container flex">
 
-            <?php foreach($specials as $special): ?>
+            <?php foreach ($specials as $special): ?>
                 <div class="specials-catalogue-unit flex">
                     <div class="specials-catalogue-image-container">
                         <a href="product/<?=$special->alias;?>">
@@ -126,7 +126,7 @@
 
             <?php foreach ($categories as $category): ?>
             <div class="menu-cart-container light flex" id="tab<?= $category->id; ?>">
-                <?php foreach($products as $product): ?>
+                <?php foreach ($products as $product): ?>
                     <?php if ($product->category_id == $category->id): ?>
                     <ul class="menu-cart-item-container flex">
                         <a href="product/<?=$product->alias;?>"><li class="menu-cart-item-title"><?= $product->title; ?></li></a>

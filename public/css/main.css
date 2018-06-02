@@ -143,16 +143,6 @@ ul {
   color: inherit;
 }
 
-.header-menu-unit:last-child .header-menu-link {
-  text-decoration: none;
-  color: #f4ba18;
-}
-.header-menu-unit:last-child .header-menu-link:hover {
-  text-decoration: none;
-  border: 1.5px solid #f4ba18;
-  color: #f4ba18;
-}
-
 .header-cart-container {
   padding: 5px 10px;
   width: auto;
@@ -620,11 +610,12 @@ footer {
 
 /*** SINGLE FORM ***/
 .single-form-page-container {
-  min-height: 100vh;
+  height: calc(100vh - 60px);
   width: 100vw;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 60px 10% 0 10%;
   background: linear-gradient(#ffffff, #eeeef1);
 
   /*background: url("../lib/img/form-bg.png");*/
@@ -639,4 +630,74 @@ footer {
 }
 .single-form-backslash {
   margin-top: 40px !important;
+}
+
+.registration-alert-container {
+  position: absolute;
+  width: auto;
+  top: 20px;
+  left: 40px;
+  filter: opacity(0.8);
+}
+.registration-alert > ul {
+  padding: 0 10px;
+  margin: 0;
+}
+
+.contact-form-forgot-container {
+  width: 100%;
+  justify-content: flex-end;
+  margin: 10px 0;
+}
+.contact-form-forgot {
+  font-size: 1rem;
+}
+.contact-form-forgot:hover {
+  text-decoration: none;
+  color: #f4ba18;
+}
+
+/*** SIGNUP / SIGNIN ***/
+.user-action {
+  background-color: transparent;
+  padding: 0;
+  height: 35px;
+  overflow: hidden;
+  transition: all .3s ease;
+  vertical-align: top;
+  margin-top: -11.5px;
+  flex-direction: column;
+  color: #f4ba18;
+}
+.user-action:hover {
+  height: 100px;
+}
+.user-action li{
+}
+.user-action li a {
+  display: block;
+  border: 1.5px solid transparent;
+  transition: .1s ease;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #f4ba18;
+}
+.user-action li a:hover {
+  border: 1.5px solid #f4ba18;
+}
+.user-action li:first-child a {
+  border: 1.5px solid transparent;
+  margin-bottom: 5px;
+}
+.user-action li a:hover {
+  border: 1.5px solid #f4ba18;
+}
+.header-menu-unit:last-child .header-menu-link {
+  text-decoration: none;
+  color: #f4ba18;
+}
+.header-menu-unit:last-child .header-menu-link:hover {
+  text-decoration: none;
+  border: 1.5px solid #f4ba18;
+  color: #f4ba18;
 }
