@@ -1,0 +1,147 @@
+.form .text-input, .form .textarea, .form .label, .form .button {
+  /*padding: 1em 2em;*/
+  padding: 0.875em 1.5em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  line-height: normal;
+  border: 1px solid transparent;
+  border-radius: 0;
+}
+
+.form .text-input, .form .textarea {
+  font: inherit;
+  line-height: normal;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 1.5px solid #7f7f7f;
+  background: transparent;
+  outline: none;
+  color: #3c3c3c;
+}
+
+.form .text-input:placeholder, .form .textarea:placeholder {
+  color: #7f7f7f;
+}
+
+.form .text-input:-webkit-autofill, .form .textarea:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: white;
+}
+
+.form .error.text-input, .form .error.textarea, .error .form .text-input, .form .error .text-input, .error .form .textarea, .form .error .textarea {
+  border-color: transparent transparent red transparent;
+}
+
+.form:not(.has-floated-label) .text-input:active, .form:not(.has-floated-label) .textarea:active, .form:not(.has-floated-label) .text-input:focus, .form:not(.has-floated-label) .textarea:focus {
+  border-color: transparent transparent black transparent;
+}
+
+.form .label {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  padding-left: 10px;
+}
+
+.form .label {
+  top: 0;
+  left: 0;
+  color: rgba(0, 0, 0, 0.7);
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.active .form .label, .form .active .label {
+  font-size: 0.75em;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.7);
+  opacity: 0.5;
+  background: transparent;
+  transform: translateY(-15px);
+}
+.focus .form .label, .form .focus .label {
+  color: #3c3c3c;
+}
+
+.form.has-floated-label .field:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 1.5px solid #3c3c3c;
+  -webkit-transition: width 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: width 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.form.has-floated-label .field.focus:after {
+  width: 100%;
+}
+
+.form .button {
+  font: inherit;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1.5px solid rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #3c3c3c;
+}
+
+.form .button:hover, .form .button:focus, .form .button:active {
+  color: #fff;
+  background: #3c3c3c;
+  border: 1.5px solid #3c3c3c;
+}
+
+.form .button:active {
+  background: #4f4f4f;
+}
+
+.form {
+  max-width: 50em;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.form .field {
+  position: relative;
+  width: 100%;
+  /*margin-bottom: 1.5em;*/
+  float: left;
+}
+
+@media screen and (min-width: 40em) {
+  .form .field.half {
+    width: calc(50% - 2em);
+    margin-right: 2em;
+  }
+  .form .field.half + .half {
+    margin-left: 2em;
+    margin-right: 0;
+  }
+}
+
+.field-button {
+  text-align: center;
+}
+
+.form .textarea {
+  max-width: 100%;
+  resize: none;
+
+  height: 55px;
+}
+
+svg path {
+  fill: black;
+}

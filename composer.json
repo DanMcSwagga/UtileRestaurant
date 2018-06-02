@@ -1,0 +1,12 @@
+{
+  "autoload": {
+    "psr-4": {
+      "utile\\": "vendor/utile/core",
+      "app\\": "app"
+    }
+  },
+  "require": {
+    "gabordemooij/redbean": "dev-master",
+    "vlucas/valitron": "dev-master"
+  }
+}
