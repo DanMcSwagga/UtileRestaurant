@@ -127,4 +127,13 @@ http://localhost/user/check?email=' . $user->email . '&hash=' . $user->password;
         return false;
     }
 
+    public function fillIdRole() {
+        if ($u = \R::findOne('user', "login = ?", [$this->attributes['login']])) {
+            $this->attributes['id'] = $u['id'];
+            $this->attributes['role'] = $u['role'];
+            return true;
+        }
+        return false;
+    }
+
 }

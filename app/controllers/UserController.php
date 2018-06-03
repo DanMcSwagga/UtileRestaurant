@@ -16,8 +16,9 @@ class UserController extends AppController{
             } else {
                 $user->attributes['password'] = password_hash($user->attributes['password'], PASSWORD_DEFAULT);
                 if ($user->save('user')) {
+                    // automatically sign in the user
+                    $user->fillIdRole();
 
-                    // automatically sign in the user (user doesnt have 'id' field tho)
                     foreach ($user->attributes as $key => $value) {
                         $_SESSION['user'][$key] = $value;
                     }
@@ -82,12 +83,15 @@ class UserController extends AppController{
             }
 
             if ($user->updatePassword()) {
-                $_SESSION['success'] = 'Password successfully updated';
                 unset($_SESSION['user']); // no more 'user' field
+
+                // automatically sign in the user
+                $user->fillIdRole();
 
                 foreach ($user->attributes as $key => $value) {
                     $_SESSION['user'][$key] = $value;
                 }
+                $_SESSION['success'] = 'Password successfully updated';
                 redirect('/');
             } else {
                 $user->getErrors();
