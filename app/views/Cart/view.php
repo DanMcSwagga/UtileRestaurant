@@ -1,9 +1,9 @@
 <!--CURRENCY PICKER-->
-<!--<div class="currency-picker-container">-->
-<!--    <select id="currency" class="currency-picker bold">-->
-<!--        --><?php //new \app\widgets\currency\Currency(); ?>
-<!--    </select>-->
-<!--</div>-->
+<div class="currency-picker-container">
+    <select id="currency" class="currency-picker bold">
+        <?php new \app\widgets\currency\Currency(); ?>
+    </select>
+</div>
 
 <!--CHECKOUT-->
 <div class="single-form-page-container flex">
@@ -29,11 +29,11 @@
                 <tbody>
                 <?php foreach ($_SESSION['cart'] as $id => $item) : ?>
                     <tr>
-                        <td><a href="/product/<?= $item['alias']; ?>"><img class="checkout-image" src="/lib/img/<?= $item['img']; ?>" alt="<?= $item['title']; ?>"></a></td>
-                        <td><a href="/product/<?= $item['alias']; ?>"><?= $item['title']; ?></a></td>
+                        <td><a href="product/<?= $item['alias']; ?>"><img class="checkout-image" src="/lib/img/<?= $item['img']; ?>" alt="<?= $item['title']; ?>"></a></td>
+                        <td><a href="product/<?= $item['alias']; ?>"><?= $item['title']; ?></a></td>
                         <td><?= $item['qty']; ?></td>
                         <td><?= $_SESSION['cart.currency']['symbol_left'] . $item['price'] . $_SESSION['cart.currency']['symbol_right']; ?></td>
-                        <td><a href="/cart/delete/?id=<?= $id; ?>"><span data-id="<?= $id; ?>" class="fa fa-remove text-secondary del-item" aria-hidden="true" style="cursor: pointer;"></span></a></td>
+                        <td><a href="cart/delete/?id=<?= $id; ?>"><span data-id="<?= $id; ?>" class="fa fa-remove text-secondary del-item" aria-hidden="true" style="cursor: pointer;"></span></a></td>
                     </tr>
                 <?php endforeach; ?>
                 <tr>

@@ -43,13 +43,15 @@ class Order extends AppModel {
         require APP . '/views/mail/mail_order.php';
         $body = ob_get_clean();
 
-        $message_client = (new Swift_Message("You have committed order {$order_id} on site " . App::$app->getProperty('restaurant_name')))
+        // message to the client
+        $message_client = (new Swift_Message("You have committed order #{$order_id} on site " . App::$app->getProperty('restaurant_name')))
             ->setFrom([App::$app->getProperty('smtp_login') => App::$app->getProperty('restaurant_name')])
             ->setTo($user_email)
             ->setBody($body, 'text/html')
         ;
 
-        $message_admin = (new Swift_Message("Order {$order_id} has been made"))
+        // message to the admin
+        $message_admin = (new Swift_Message("Order #{$order_id} has been made"))
             ->setFrom([App::$app->getProperty('smtp_login') => App::$app->getProperty('restaurant_name')])
             ->setTo(App::$app->getProperty('admin_email'))
             ->setBody($body, 'text/html')
@@ -62,7 +64,7 @@ class Order extends AppModel {
         unset($_SESSION['cart.qty']);
         unset($_SESSION['cart.sum']);
         unset($_SESSION['cart.currency']);
-        $_SESSION['success'] = '<p>Thank you for your order. In the near future you will be <br />contacted by our manager for the coordination of the order<p>';
+        $_SESSION['success'] = '<p>Thank you for your order.<br />In the near future you will be contacted by <br />our manager for the coordination of the order<p>';
     }
 
 }

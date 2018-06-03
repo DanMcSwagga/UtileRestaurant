@@ -16,7 +16,7 @@
                     <input class='text-input' id='password-sup' name='password-sup' min="6" type='password' required>
                 </p>
                 <div class="contact-form-forgot-container flex" data-aos="upSlideLong" data-aos-once="true" data-aos-duration="850">
-                    <a href="/user/forgot" class="contact-form-forgot"><span>Forgot password?</span></a>
+                    <a href="user/forgot" class="contact-form-forgot"><span>Forgot password?</span></a>
                 </div>
                 <p class='field field-button' data-aos="upSlideLong" data-aos-duration="600" data-aos-once="true">
                     <input class='button backslash' type='submit' value='Log In'>

@@ -14,8 +14,8 @@
             <tbody>
             <?php foreach ($_SESSION['cart'] as $id => $item) : ?>
                 <tr>
-                    <td><a href="/product/<?= $item['alias']; ?>"><img src="/lib/img/<?= $item['img']; ?>" alt="<?= $item['title']; ?>"></a></td>
-                    <td><a href="/product/<?= $item['alias']; ?>" class="contact-form-forgot"><?= $item['title']; ?></a></td>
+                    <td><a href="product/<?= $item['alias']; ?>"><img src="/lib/img/<?= $item['img']; ?>" alt="<?= $item['title']; ?>"></a></td>
+                    <td><a href="product/<?= $item['alias']; ?>" class="contact-form-forgot"><?= $item['title']; ?></a></td>
                     <td><?= $item['qty']; ?></td>
                     <td><?= $_SESSION['cart.currency']['symbol_left'] . $item['price'] . $_SESSION['cart.currency']['symbol_right']; ?></td>
                     <td><span data-id="<?= $id; ?>" class="fa fa-remove text-secondary del-item" aria-hidden="true" style="cursor: pointer;"></span></td>

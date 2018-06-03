@@ -124,6 +124,25 @@ CREATE TABLE `order` (
   `note` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `order`
+--
+
+INSERT INTO `order` (`id`, `user_id`, `status`, `date`, `update_at`, `currency`, `note`) VALUES
+(1, 17, '0', '2018-06-03 15:02:39', NULL, 'USD', ''),
+(2, 22, '0', '2018-06-03 16:22:18', NULL, 'USD', ''),
+(3, 22, '0', '2018-06-03 16:22:33', NULL, 'USD', ''),
+(4, 22, '0', '2018-06-03 16:23:03', NULL, 'USD', ''),
+(5, 22, '0', '2018-06-03 16:36:17', NULL, 'USD', ''),
+(6, 23, '0', '2018-06-03 17:01:49', NULL, 'USD', ''),
+(7, 24, '0', '2018-06-03 17:16:48', NULL, 'USD', 'Bring it on, Britney'),
+(8, 24, '0', '2018-06-03 17:17:02', NULL, 'USD', 'Bring it on, Britney'),
+(9, 24, '0', '2018-06-03 17:17:56', NULL, 'USD', 'Bring it on, Britney'),
+(10, 24, '0', '2018-06-03 17:20:58', NULL, 'USD', 'Bring it on, Britney'),
+(11, 24, '0', '2018-06-03 17:21:53', NULL, 'USD', 'Bring it on, Britney'),
+(12, 24, '0', '2018-06-03 17:32:19', NULL, 'USD', 'Sup nibbas'),
+(13, 24, '0', '2018-06-03 17:38:46', NULL, 'USD', '');
+
 -- --------------------------------------------------------
 
 --
@@ -138,6 +157,50 @@ CREATE TABLE `order_product` (
   `title` varchar(255) NOT NULL,
   `price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `order_product`
+--
+
+INSERT INTO `order_product` (`id`, `order_id`, `product_id`, `qty`, `title`, `price`) VALUES
+(1, 1, 2, 1, 'Celery Quandong', 30),
+(2, 2, 1, 1, 'Greens Fava', 17),
+(3, 2, 6, 1, 'Yarrow Sweet', 5),
+(4, 3, 1, 1, 'Greens Fava', 17),
+(5, 3, 6, 1, 'Yarrow Sweet', 5),
+(6, 4, 1, 1, 'Greens Fava', 17),
+(7, 4, 6, 1, 'Yarrow Sweet', 5),
+(8, 5, 1, 1, 'Greens Fava', 17),
+(9, 5, 6, 1, 'Yarrow Sweet', 5),
+(10, 5, 2, 2, 'Celery Quandong', 30),
+(11, 6, 1, 1, 'Greens Fava', 17),
+(12, 6, 6, 1, 'Yarrow Sweet', 5),
+(13, 6, 2, 2, 'Celery Quandong', 30),
+(14, 7, 1, 1, 'Greens Fava', 17),
+(15, 7, 6, 1, 'Yarrow Sweet', 5),
+(16, 7, 2, 2, 'Celery Quandong', 30),
+(17, 7, 3, 1, 'Pea Horseradish', 25),
+(18, 8, 1, 1, 'Greens Fava', 17),
+(19, 8, 6, 1, 'Yarrow Sweet', 5),
+(20, 8, 2, 2, 'Celery Quandong', 30),
+(21, 8, 3, 1, 'Pea Horseradish', 25),
+(22, 9, 1, 1, 'Greens Fava', 17),
+(23, 9, 6, 1, 'Yarrow Sweet', 5),
+(24, 9, 2, 2, 'Celery Quandong', 30),
+(25, 9, 3, 1, 'Pea Horseradish', 25),
+(26, 10, 1, 1, 'Greens Fava', 17),
+(27, 10, 6, 1, 'Yarrow Sweet', 5),
+(28, 10, 2, 2, 'Celery Quandong', 30),
+(29, 10, 3, 1, 'Pea Horseradish', 25),
+(30, 11, 1, 1, 'Greens Fava', 17),
+(31, 11, 6, 1, 'Yarrow Sweet', 5),
+(32, 11, 2, 2, 'Celery Quandong', 30),
+(33, 11, 3, 1, 'Pea Horseradish', 25),
+(34, 12, 1, 1, 'Greens Fava', 17),
+(35, 12, 6, 1, 'Yarrow Sweet', 5),
+(36, 12, 2, 2, 'Celery Quandong', 30),
+(37, 12, 3, 1, 'Pea Horseradish', 25),
+(38, 13, 2, 1, 'Celery Quandong', 30);
 
 -- --------------------------------------------------------
 
@@ -225,10 +288,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `login`, `password`, `email`, `name`, `address`, `role`) VALUES
-(3, 'mrxulk', '12345678', 'svavka@mail.com', 'Svavik', 'Some address', 'user'),
-(4, 'dan', 'password', 'denyast@ukr.net', 'Denys Stetsenko', 'Olzhycha 8, 18', 'user'),
-(5, 'Petro', '13;jsdf', 'perto@gmail.com', 'Petroshka', 'asfa[sfasfasf', 'user'),
-(6, 'Taras', '$2y$10$48qRJ2yLrVGDK6nxd5MeYOjBZ3w/jxB3LNpELA7O/WTdap9cg7Cz6', 'shev@ukr.met', 'Sheva', 'askfhaskfhk', 'user');
+(15, 'danmcswagga', '$2y$10$hzbFzWlqTeHazwKaHeSEmOd2yDCHhVwpa43v38nxGp//4JKY68f8q', 'asfasf@gmailafs.sfdf', 'Denys Stetsenko', 'Olzhycha 8, 18', 'user'),
+(16, 'Petro', '$2y$10$7YC1xh5bef.Sc2Qbpzo2JuhH95Wv7awWqaMQr1YJJPN.wdFQay2cS', 'dan@dan.com', 'Denys Stetsenko', 'Olzhycha 8, 18', 'user'),
+(17, 'mruxlk', '$2y$10$FS.QXEzjiy9vLKB4wZH72OsxNlGk4qkFfkGOUGK2HzCP3PdkssdO6', 'asgfasga@ukr.tn', 'sadfasfsf', 'asfasfasf', 'user'),
+(22, 'Slava', '$2y$10$nQ54jPcjCPAQzw5BXOp5ku1G8lh.LwYdytU0d1LLJAjd3bOY69/f2', 'denyasfast@ukr.netasf', 'Slava', 'Olzhyva', 'user'),
+(23, 'dan', '$2y$10$oA/F.jBOtbcg7JvEXV6e2OqTCmroMF8AY4WC9.KJ56ShUChj0se7u', 'denyast@ukr.net', 'Dan', 'Kyiv, Olzhyva 8, 18', 'user'),
+(24, 'Baguette', '$2y$10$/zk80xM9pwMqeaQ9SJ9siegpXtqqNbZMpKIrL2RH0DLWPpzWLHdeu', 'denyast98@gmail.com', 'Le Baguette', 'Unknown, bitch', 'user');
 
 --
 -- Индексы сохранённых таблиц
@@ -310,19 +375,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `attribute_group`
 --
 ALTER TABLE `attribute_group`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `attribute_value`
 --
 ALTER TABLE `attribute_value`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `currency`
@@ -334,19 +399,19 @@ ALTER TABLE `currency`
 -- AUTO_INCREMENT для таблицы `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT для таблицы `order_product`
 --
 ALTER TABLE `order_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT для таблицы `product`
@@ -358,7 +423,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

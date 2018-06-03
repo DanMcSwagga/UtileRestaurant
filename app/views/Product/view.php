@@ -1,9 +1,10 @@
-<!--<!--CURRENCY PICKER-->
-<!--<div class="currency-picker-container">-->
-<!--    <select id="currency" class="currency-picker bold">-->
-<!--        --><?php //new \app\widgets\currency\Currency(); ?>
-<!--    </select>-->
-<!--</div>-->
+<!--CURRENCY PICKER-->
+<div class="currency-picker-container">
+    <select id="currency" class="currency-picker bold">
+        <?php $curr = new \app\widgets\currency\Currency(); ?>
+        <?php debug($curr); ?>
+    </select>
+</div>
 
 <!--PRODUCT-->
 <?php $curr = \utile\App::$app->getProperty('currency'); ?>

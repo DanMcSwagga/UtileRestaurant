@@ -5,21 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
+    <base href="/">
     <meta name="author" content="Dan Stetsenko">
 
-    <link rel="icon" href="/lib/img/logo.ico">
+    <link rel="icon" href="lib/img/logo.ico">
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700" rel="stylesheet">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/responsive.css">
-    <link rel="stylesheet" href="/css/form.css">
-    <link rel="stylesheet" href="/css/animations.css">
-    <link rel="stylesheet" href="/css/aos.css">
-    <link rel="stylesheet" href="/css/currency-picker.css">
-    <link rel="stylesheet" href="/css/single.css">
-<!--    <link rel="stylesheet" href="/css/hamburger.css">-->
-<!--    <link rel="stylesheet" href="/css/hamburger-responsive.css">-->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/currency-picker.css">
+    <link rel="stylesheet" href="css/single.css">
+<!--    <link rel="stylesheet" href="css/hamburger.css">-->
+<!--    <link rel="stylesheet" href="css/hamburger-responsive.css">-->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <?=$this->getMeta();?>
@@ -43,10 +44,10 @@
                 <ul class="header-menu-unit user-action flex">
                     <?php if (!empty($_SESSION['user'])): ?>
                     <li><a href="#"><?= $_SESSION['user']['login']; ?></a></li>
-                    <li><a href="/user/logout">Log Out</a></li>
+                    <li><a href="user/logout">Log Out</a></li>
                     <?php else: ?>
-                    <li><a href="/user/signup">Sign Up</a></li>
-                    <li><a href="/user/login">Sign In</a></li>
+                    <li><a href="user/signup">Sign Up</a></li>
+                    <li><a href="user/login">Sign In</a></li>
                     <?php endif; ?>
                 </ul>
             </ul>
@@ -220,6 +221,7 @@
 
             </div>
             <div class="modal-footer">
+
                 <form action="" class="form">
                     <p class='field field-button' data-aos="simpleAppear" data-aos-duration="600" data-aos-once="true">
                         <input data-dismiss="modal" class='button backslash continue-button' type='submit' value='Continue'>
@@ -235,6 +237,10 @@
                         <button class='button backslash clear-cart-button' type="button" onclick="clearCart()" style="text-decoration: none;">Clear cart</button>
                     </p>
                 </form>
+<!--                <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue</button>-->
+<!--                <a href="cart/view" type="button" class="btn btn-primary">Checkout</a>-->
+<!--                <button type="button" class="btn btn-danger" onclick="clearCart()">Clear cart</button>-->
+
             </div>
         </div>
     </div>
