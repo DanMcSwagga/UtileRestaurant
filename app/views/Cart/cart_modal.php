@@ -1,24 +1,24 @@
 <?php if (!empty($_SESSION['cart'])): ?>
     <div class="table-responsive">
-        <table class="table table-hover table-striped">
+        <table class="table">
             <thead>
             <tr>
                 <th>Photo</th>
                 <th>Title</th>
                 <th>Quantity</th>
                 <th>Price</th>
-                <td><span data-id="<?= $id; ?>" class="fa fa-remove text-secondary del-item" aria-hidden="true"></span></td>
+<!--                <td><span data-id="--><?//= $id; ?><!--" class="fa fa-remove text-secondary del-item" aria-hidden="true"></span></td>-->
             </tr>
             </thead>
 
             <tbody>
             <?php foreach ($_SESSION['cart'] as $id => $item) : ?>
                 <tr>
-                    <td><a href="/product/<?= $item['alias']; ?>"><img src="/lib/img/<?= $item['img']; ?>" alt=""></a></td>
-                    <td><a href="/product/<?= $item['alias']; ?>"><?= $item['title']; ?></a></td>
+                    <td><a href="/product/<?= $item['alias']; ?>"><img src="/lib/img/<?= $item['img']; ?>" alt="<?= $item['title']; ?>"></a></td>
+                    <td><a href="/product/<?= $item['alias']; ?>" class="contact-form-forgot"><?= $item['title']; ?></a></td>
                     <td><?= $item['qty']; ?></td>
                     <td><?= $_SESSION['cart.currency']['symbol_left'] . $item['price'] . $_SESSION['cart.currency']['symbol_right']; ?></td>
-                    <td><span data-id="<?= $id; ?>" class="fa fa-remove text-secondary del-item" aria-hidden="true"></span></td>
+                    <td><span data-id="<?= $id; ?>" class="fa fa-remove text-secondary del-item" aria-hidden="true" style="cursor: pointer;"></span></td>
                 </tr>
             <?php endforeach; ?>
             <tr>

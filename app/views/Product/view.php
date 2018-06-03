@@ -1,3 +1,11 @@
+<!--<!--CURRENCY PICKER-->-->
+<!--<div class="currency-picker-container">-->
+<!--    <select id="currency" class="currency-picker bold">-->
+<!--        --><?php //new \app\widgets\currency\Currency(); ?>
+<!--    </select>-->
+<!--</div>-->
+
+<!--PRODUCT-->
 <?php $curr = \utile\App::$app->getProperty('currency'); ?>
 <div class="product flex">
     <section class="product-section flex">

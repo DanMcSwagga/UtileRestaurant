@@ -28,7 +28,7 @@
                     <input class='text-input' id='address' name='address' type="name" required>
                 </p>
                 <p class='field field-button' data-aos="upSlideLong" data-aos-duration="700" data-aos-once="true">
-                    <input class='button backslash' type='submit' value='Send'>
+                    <input class='button backslash' type='submit' value='Sign Up'>
                 </p>
             </div>
         </form>

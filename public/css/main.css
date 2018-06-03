@@ -405,6 +405,11 @@ ul {
   line-height: 1.5;
 }
 
+.menu-cart-item-container > a:hover {
+  text-decoration: none;
+  color: #f4ba18;
+}
+
 .menu-cart-item-title {
   margin-right: 0.5rem;
   font-size: 1.125rem;
@@ -610,12 +615,12 @@ footer {
 
 /*** SINGLE FORM ***/
 .single-form-page-container {
-  height: calc(100vh - 60px);
+  min-height: 100vh;
   width: 100vw;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 60px 10% 0 10%;
+  padding: 65px 10% 0 10%;
   background: linear-gradient(#ffffff, #eeeef1);
 
   /*background: url("../lib/img/form-bg.png");*/
@@ -692,12 +697,20 @@ footer {
 .user-action li a:hover {
   border: 1.5px solid #f4ba18;
 }
-.header-menu-unit:last-child .header-menu-link {
-  text-decoration: none;
-  color: #f4ba18;
+
+
+/*** CHECKOUT ***/
+.checkout-table-container {
+  /*min-height: 100vh;*/
+  width: 100%;
+  margin: 50px 0;
 }
-.header-menu-unit:last-child .header-menu-link:hover {
-  text-decoration: none;
-  border: 1.5px solid #f4ba18;
-  color: #f4ba18;
+.checkout-image {
+  height: 55px;
+}
+.checkout-note {
+  margin-top: 20px;
+}
+.table > tbody > tr > td:last-child {
+  text-align: right;
 }

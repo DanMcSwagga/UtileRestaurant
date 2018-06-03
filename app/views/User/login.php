@@ -19,7 +19,7 @@
                     <a href="/user/forgot" class="contact-form-forgot"><span>Forgot password?</span></a>
                 </div>
                 <p class='field field-button' data-aos="upSlideLong" data-aos-duration="600" data-aos-once="true">
-                    <input class='button backslash' type='submit' value='Send'>
+                    <input class='button backslash' type='submit' value='Log In'>
                 </p>
             </div>
         </form>

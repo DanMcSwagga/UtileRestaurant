@@ -9,7 +9,7 @@
 }
 
 @media all and (max-width: 1330px) and (min-width: 1180px) {
-	.header-menu-link {
+	.header-menu-link, .user-action li a {
 		padding: 10px 20px;
 	}
 	.specials-wrapper {
@@ -22,7 +22,7 @@
 		background-size: 160%;
 		background-position: left -270px top 0;
 	}
-	.header-menu-link {
+	.header-menu-link, .user-action li a {
 		padding: 10px 19px;
 		font-size: 16px;
 	}
@@ -68,7 +68,7 @@
 	.header-wrapper, .intro-page-container {
 		justify-content: center;
 	}
-	.header-menu-link {
+	.header-menu-link, .user-action li a {
 		padding: 10px 18px;
 		font-size: 16px;
 	}
@@ -125,7 +125,7 @@
 	.header-wrapper, .intro-page-container {
 		justify-content: center;
 	}
-	.header-menu-link {
+	.header-menu-link, .user-action li a {
 		padding: 10px 18px;
 		font-size: 16px;
 	}
@@ -183,9 +183,12 @@
 	.header-wrapper, .intro-page-container {
 		justify-content: center;
 	}
-	.header-menu-link {
+	.header-menu-link, .user-action li a {
 		padding: 10px 15px;
 		font-size: 14px;
+	}
+	.user-action {
+		margin-top: -8.5px;
 	}
 	.categories-container {
 		margin: 40px;
@@ -254,6 +257,13 @@
 	}
 	.footer-empty {
 		width: 30%;
+	}
+
+	.checkout-table-container {
+		font-size: 14px;
+	}
+	.checkout-image {
+		height: 50px;
 	}
 }
 
@@ -401,6 +411,14 @@
 
 	.single-form-page-container > .curly-underline-block {
 		display: none;
+	}
+
+	.checkout-table-container {
+		font-size: 13px;
+		margin-bottom: 40px;
+	}
+	.checkout-image {
+		height: 50px;
 	}
 }
 
@@ -556,5 +574,13 @@
 
 	.single-form-page-container > .curly-underline-block {
 		display: none;
+	}
+
+	.checkout-table-container {
+		font-size: 12px;
+		margin-bottom: 40px;
+	}
+	.checkout-image {
+		height: 50px;
 	}
 }

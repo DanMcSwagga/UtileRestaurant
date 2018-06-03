@@ -22,7 +22,7 @@ class Cart extends AppModel {
                 'title' => $title,
                 'alias' => $product->alias,
                 'price' => $price * $_SESSION['cart.currency']['value'],
-                'img' => $product->img
+                'img' => $product->img,
             ];
         }
         $_SESSION['cart.qty'] = isset($_SESSION['cart.qty']) ? $_SESSION['cart.qty'] + $qty : $qty;

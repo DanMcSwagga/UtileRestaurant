@@ -1,3 +1,11 @@
+<!--CURRENCY PICKER-->
+<div class="currency-picker-container">
+    <select id="currency" class="currency-picker bold">
+        <?php $curr = new \app\widgets\currency\Currency(); ?>
+        <?php debug($curr); ?>
+    </select>
+</div>
+
 <!-- INTRO PAGE -->
 <section class="intro-section">
 
@@ -10,7 +18,7 @@
                 <div class="intro-page-title-wrapper flex">
 
                     <div class="text-centered" data-aos="leftSlideMedium" data-aos-once="true" data-aos-duration="400">
-                        <h1 class="intro-page-title light">Veggies es bonus vobis, <br />proinde vos postulo essum.</h1>
+                        <h1 class="intro-page-title light">Utile es bonus vobis, <br />proinde vos postulo essum.</h1>
                     </div>
 
                     <div class="curly-underline-block backslash flex" data-aos="leftSlideLong" data-aos-duration="700" data-aos-once="true">
@@ -145,10 +153,3 @@
     </div>
 </section>
 <?php endif; ?>
-
-<!--CURRENCY PICKER-->
-<div class="currency-picker-container">
-    <select id="currency" class="currency-picker bold">
-        <?php new \app\widgets\currency\Currency(); ?>
-    </select>
-</div>

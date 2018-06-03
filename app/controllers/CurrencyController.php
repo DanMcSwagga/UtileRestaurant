@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use app\models\Cart;
 
-class CurrencyController extends AppController{
+class CurrencyController extends AppController {
 
     public function changeAction() {
         $currency = !empty($_GET['curr']) ? $_GET['curr'] : null;

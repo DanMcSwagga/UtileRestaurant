@@ -38,7 +38,7 @@
                 <li class="header-menu-unit"><a class="header-menu-link" href="<?= PATH; ?>">Home</a></li>
 <!--                <li class="header-menu-unit"><a class="header-menu-link" href="#specials">Specials</a></li>-->
 <!--                <li class="header-menu-unit"><a class="header-menu-link" href="#about">About</a></li>-->
-                <li class="header-menu-unit"><a class="header-menu-link" href="#menu">Menu</a></li>
+<!--                <li class="header-menu-unit"><a class="header-menu-link" href="#menu">Menu</a></li>-->
                 <li class="header-menu-unit"><a class="header-menu-link" href="#contact">Contact</a></li>
                 <ul class="header-menu-unit user-action flex">
                     <?php if (!empty($_SESSION['user'])): ?>
@@ -137,6 +137,10 @@
             </div>
         </div>
     </div>
+<!--    --><?php //debug($this->controller); ?>
+<!--    --><?php //debug(\utile\Router::getRoute()); ?>
+<!--    --><?php //debug($_SESSION); ?>
+<!--    --><?php //session_destroy(); ?>
     <?=$content;?>
 </div>
 
@@ -193,8 +197,12 @@
             <div class="footer-empty flex"></div>
             <div class="footer-copyright flex"><span>Copyright 2018 © Dan Stetsenko</span></div>
             <div class="footer-social flex">
-                <div class="footer-social-icon-container"><img class="footer-social-icon" src="/lib/icons/icon-facebook-thin.svg" alt="Facebook"></div>
-                <div class="footer-social-icon-container"><img class="footer-social-icon" src="/lib/icons/icon-instagram.svg" alt="Instagram"></div>
+                <div class="footer-social-icon-container">
+                    <a href="https://www.youtube.com/channel/UCrnyYSV_PluCANqms0wX3YQ"><img class="footer-social-icon" src="/lib/icons/icon-facebook-thin.svg" alt="Facebook"></a>
+                </div>
+                <div class="footer-social-icon-container">
+                    <a href="https://www.instagram.com/danmcswagga"><img class="footer-social-icon" src="/lib/icons/icon-instagram.svg" alt="Instagram"></a>
+                </div>
             </div>
         </div>
     </footer>
