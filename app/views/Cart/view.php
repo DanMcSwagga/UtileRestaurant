@@ -1,4 +1,4 @@
-<!--<!--CURRENCY PICKER-->-->
+<!--CURRENCY PICKER-->
 <!--<div class="currency-picker-container">-->
 <!--    <select id="currency" class="currency-picker bold">-->
 <!--        --><?php //new \app\widgets\currency\Currency(); ?>

@@ -8,6 +8,6 @@
   "require": {
     "gabordemooij/redbean": "dev-master",
     "vlucas/valitron": "dev-master",
-    "swiftmailer/swiftmailer": "dev-master"
+    "swiftmailer/swiftmailer": "^5.4"
   }
 }

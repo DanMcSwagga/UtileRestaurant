@@ -62,7 +62,7 @@ class Order extends AppModel {
         unset($_SESSION['cart.qty']);
         unset($_SESSION['cart.sum']);
         unset($_SESSION['cart.currency']);
-        $_SESSION['success'] = 'Thank you for your order. In the near future you will be contacted by our manager for the coordination of the order';
+        $_SESSION['success'] = '<p>Thank you for your order. In the near future you will be <br />contacted by our manager for the coordination of the order<p>';
     }
 
 }

@@ -137,6 +137,7 @@
             </div>
         </div>
     </div>
+<!--    --><?php //debug($_SESSION); ?>
     <?=$content;?>
 </div>
 

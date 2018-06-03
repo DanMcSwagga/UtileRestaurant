@@ -16,11 +16,13 @@ class UserController extends AppController{
             } else {
                 $user->attributes['password'] = password_hash($user->attributes['password'], PASSWORD_DEFAULT);
                 if ($user->save('user')) {
-                    // automatically sign in the user
+
+                    // automatically sign in the user (user doesnt have 'id' field tho)
                     foreach ($user->attributes as $key => $value) {
                         $_SESSION['user'][$key] = $value;
                     }
                     $_SESSION['success'] = 'Registration successful';
+                    redirect('/');
                 } else {
                     $_SESSION['error'] = 'Registration error';
                 }
@@ -35,6 +37,7 @@ class UserController extends AppController{
             $user = new User();
             if ($user->login()) {
                 $_SESSION['success'] = 'Authorization successful';
+                redirect('/');
             } else {
                 $_SESSION['error'] = 'Login/password are incorrect';
             }
@@ -85,7 +88,7 @@ class UserController extends AppController{
                 foreach ($user->attributes as $key => $value) {
                     $_SESSION['user'][$key] = $value;
                 }
-                redirect('/main/index');
+                redirect('/');
             } else {
                 $user->getErrors();
             }
