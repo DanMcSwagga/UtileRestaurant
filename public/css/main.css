@@ -271,7 +271,7 @@ ul {
 .specials-catalogue-image {
   width: 100%;
   /*height: 100%;*/
-  transition: .3s ease-in-out;
+  transition: .5s ease-in-out;
 }
 
 .specials-catalogue-unit:hover .specials-catalogue-image {
@@ -613,7 +613,18 @@ footer {
   height: 75px;
 }
 
-/*** SINGLE FORM ***/
+
+.checkout-button {
+  border: 1.5px solid #f4ba18 !important;
+  color: #f4ba18 !important;
+}
+.checkout-button:hover {
+  background-color: #f4ba18 !important;
+  color: #3c3c3c !important;
+}
+
+
+  /*** SINGLE FORM ***/
 .single-form-page-container {
   min-height: 100vh;
   width: 100vw;

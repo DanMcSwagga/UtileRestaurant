@@ -137,10 +137,6 @@
             </div>
         </div>
     </div>
-<!--    --><?php //debug($this->controller); ?>
-<!--    --><?php //debug(\utile\Router::getRoute()); ?>
-<!--    --><?php //debug($_SESSION); ?>
-<!--    --><?php //session_destroy(); ?>
     <?=$content;?>
 </div>
 
@@ -223,9 +219,21 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue</button>
-                <a href="/cart/view" type="button" class="btn btn-primary">Checkout</a>
-                <button type="button" class="btn btn-danger" onclick="clearCart()">Clear cart</button>
+                <form action="" class="form">
+                    <p class='field field-button' data-aos="simpleAppear" data-aos-duration="600" data-aos-once="true">
+                        <input data-dismiss="modal" class='button backslash continue-button' type='submit' value='Continue'>
+                    </p>
+                </form>
+                <form action="/cart/view" class="form">
+                    <p class='field field-button' data-aos="simpleAppear" data-aos-duration="600" data-aos-once="true">
+                        <input class='button backslash checkout-button' type='submit' value='Checkout'>
+                    </p>
+                </form>
+                <form action="" class="form">
+                    <p class='field field-button' data-aos="simpleAppear" data-aos-duration="600" data-aos-once="true">
+                        <button class='button backslash clear-cart-button' type="button" onclick="clearCart()" style="text-decoration: none;">Clear cart</button>
+                    </p>
+                </form>
             </div>
         </div>
     </div>

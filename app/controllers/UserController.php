@@ -5,7 +5,7 @@ namespace app\controllers;
 use app\models\User;
 
 class UserController extends AppController{
-    
+
     public function signupAction() {
         if (!empty($_POST)) {
             $user = new User();
@@ -16,7 +16,6 @@ class UserController extends AppController{
             } else {
                 $user->attributes['password'] = password_hash($user->attributes['password'], PASSWORD_DEFAULT);
                 if ($user->save('user')) {
-
                     // automatically sign in the user
                     foreach ($user->attributes as $key => $value) {
                         $_SESSION['user'][$key] = $value;
@@ -81,8 +80,12 @@ class UserController extends AppController{
 
             if ($user->updatePassword()) {
                 $_SESSION['success'] = 'Password successfully updated';
-                $_SESSION['user']['attributes']['password'] = $user->attributes['password'];
-                redirect('');
+                unset($_SESSION['user']); // no more 'user' field
+
+                foreach ($user->attributes as $key => $value) {
+                    $_SESSION['user'][$key] = $value;
+                }
+                redirect('/main/index');
             } else {
                 $user->getErrors();
             }
@@ -91,5 +94,5 @@ class UserController extends AppController{
             redirect('/user/signup');
         }
     }
-    
+
 }

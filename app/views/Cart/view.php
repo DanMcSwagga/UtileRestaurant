@@ -64,11 +64,11 @@
                 <div class="has-feedback">
                     <p class='field required half italic' data-aos="upSlideLong" data-aos-once="true">
                         <label class='label' for='email'>Email</label>
-                        <input class='text-input' id='email' name='email' type="email" required value="<?= isset($_SESSION['form_data']['name']) ? $_SESSION['form_data']['name'] : '' ?>">
+                        <input class='text-input' id='email' name='email' type="email" required value="<?= isset($_SESSION['form_data']['email']) ? $_SESSION['form_data']['email'] : '' ?>">
                     </p>
                     <p class='field required half italic' data-aos="upSlideLong" data-aos-once="true">
                         <label class='label required' for='name'>Name</label>
-                        <input class='text-input' id='name' name='name' type='text' required value="<?= isset($_SESSION['form_data']['email']) ? $_SESSION['form_data']['email'] : '' ?>">
+                        <input class='text-input' id='name' name='name' type='text' required value="<?= isset($_SESSION['form_data']['name']) ? $_SESSION['form_data']['name'] : '' ?>">
                     </p>
                     <p class='field required italic' data-aos="upSlideLong" data-aos-once="true">
                         <label class='label' for='address'>Address</label>
