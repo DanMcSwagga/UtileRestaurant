@@ -21,8 +21,8 @@
 </head>
 <body class="hold-transition login-page">
 
-<?= debug($_SESSION); ?>
-<?= debug($_POST); ?>
+<?//= debug($_SESSION); ?>
+<?//= debug($_POST); ?>
 <?= $content; ?>
 
 <!-- jQuery -->

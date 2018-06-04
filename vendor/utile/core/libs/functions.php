@@ -1,9 +1,10 @@
 <?php
 
-function debug($arr) {
+function debug($arr, $die = false) {
     echo '<pre>';
     echo print_r($arr, true);
     echo '</pre>';
+    if ($die) die;
 }
 
 function redirect($http = false) {
@@ -14,4 +15,8 @@ function redirect($http = false) {
     }
     header("Location: {$redirect}");
     exit;
+}
+
+function h($str) {
+    return htmlspecialchars($str, ENT_QUOTES);
 }

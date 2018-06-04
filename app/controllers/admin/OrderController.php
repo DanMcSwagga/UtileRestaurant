@@ -8,7 +8,7 @@ class OrderController extends AppController {
 
     public function indexAction() {
         $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
-        $perpage = 1;
+        $perpage = 5;
         $count = \R::count('order');
         $pagination = new Pagination($page, $perpage, $count);
         $start = $pagination->getStart();
@@ -24,7 +24,7 @@ class OrderController extends AppController {
 
     public function viewAction() {
         $order_id = $this->getRequestID();
-        $order = \R::getRow("SELECT `order`.*, `user`.`name`, ROUND(SUM(`order_product`.`price`), 2) AS `sum` FROM `order`
+        $order = \R::getRow("SELECT `order`.*, `user`.`name`, ROUND(SUM(`order_product`.`price` * `order_product`.`qty`), 2) AS `sum` FROM `order`
   JOIN `user` ON `order`.`user_id` = `user`.`id`
   JOIN `order_product` ON `order`.`id` = `order_product`.`order_id`
   WHERE `order`.`id` = ?
