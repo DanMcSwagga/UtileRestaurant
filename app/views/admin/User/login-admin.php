@@ -17,11 +17,11 @@
 
             <form action="<?= ADMIN; ?>/user/login-admin" method="post">
                 <div class="form-group has-feedback">
-                    <input name="login" type="text" class="form-control" placeholder="Login">
+                    <input name="login-sup" type="text" class="form-control" placeholder="Login">
                     <span class="fa fa-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input name="password" type="password" class="form-control" placeholder="Password">
+                    <input name="password-sup" type="password" class="form-control" placeholder="Password">
                     <span class="fa fa-lock form-control-feedback"></span>
                 </div>
                 <div class="row">

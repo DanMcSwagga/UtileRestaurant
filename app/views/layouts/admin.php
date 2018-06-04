@@ -43,6 +43,13 @@
 <!--            </div>-->
 <!--        </form>-->
 
+        <!-- Logout -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/user/logout">Log Out</a>
+            </li>
+        </ul>
+
         <!-- Right navbar links -->
         <!-- ... -->
     </nav>
@@ -65,7 +72,7 @@
                     <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block"><?= $_SESSION['user']['name']; ?></a>
+                    <a href="<?= ADMIN; ?>/user/edit?id=<?= $_SESSION['user']['id']; ?>" class="d-block"><?= $_SESSION['user']['name']; ?></a>
                 </div>
             </div>
 
