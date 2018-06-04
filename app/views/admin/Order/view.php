@@ -28,10 +28,6 @@
                         <table class="table table-bordered table-hover">
                             <tbody>
                                 <tr>
-                                    <td>Order #</td>
-                                    <td><?= $order['id'] ?></td>
-                                </tr>
-                                <tr>
                                     <td>Order date</td>
                                     <td><?= $order['date'] ?></td>
                                 </tr>
