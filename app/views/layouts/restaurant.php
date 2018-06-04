@@ -256,6 +256,7 @@
 <script src="/js/jquery.elevateZoom.min.js"></script>
 <script src="/js/product-zoom.js"></script>
 <script src="/js/main.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
 
 </body>

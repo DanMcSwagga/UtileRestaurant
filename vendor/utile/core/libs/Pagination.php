@@ -61,7 +61,7 @@ class Pagination {
     }
 
     public function getCountPages() {
-        return ceil($this->total / $this->perpage) ?: 1;
+        return ceil($this->total / $this->perpage) ? : 1;
     }
 
     public function getCurrentPage($page) {

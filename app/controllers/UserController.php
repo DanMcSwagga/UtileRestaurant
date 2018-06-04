@@ -3,34 +3,65 @@
 namespace app\controllers;
 
 use app\models\User;
+use utile\App;
 
 class UserController extends AppController{
 
     public function signupAction() {
         if (!empty($_POST)) {
-            $user = new User();
-            $data = $_POST;
-            $user->load($data);
-            if (!$user->validate($data) || !$user->checkUnique()) {
-                $user->getErrors();
-            } else {
-                $user->attributes['password'] = password_hash($user->attributes['password'], PASSWORD_DEFAULT);
-                if ($user->save('user')) {
-                    // automatically sign in the user
-                    $user->fillIdRole();
+            if (!empty($_POST['g-recaptcha-response'])) {
+                $user = new User();
+                $data = $_POST;
+                $user->load($data);
 
-                    foreach ($user->attributes as $key => $value) {
-                        $_SESSION['user'][$key] = $value;
+                $url_data = $this->getCaptchaData();
+                $result = json_decode($this->passCaptchaUrl($url_data));
+
+                // captcha completed
+                if ($result->success) {
+                    if (!$user->validate($data) || !$user->checkUnique()) {
+                        $user->getErrors();
+                    } else {
+                        $user->attributes['password'] = password_hash($user->attributes['password'], PASSWORD_DEFAULT);
+                        if ($user->save('user')) {
+                            // automatically sign in the user
+                            $user->fillIdRole();
+
+                            foreach ($user->attributes as $key => $value) {
+                                $_SESSION['user'][$key] = $value;
+                            }
+                            $_SESSION['success'] = 'Registration successful';
+                            redirect('/');
+                        } else {
+                            $_SESSION['error'] = 'Registration error';
+                        }
                     }
-                    $_SESSION['success'] = 'Registration successful';
-                    redirect('/');
-                } else {
-                    $_SESSION['error'] = 'Registration error';
                 }
+                $_SESSION['error'] = 'Stop it, naughty bot';
+                redirect();
             }
+            $_SESSION['error'] = 'Please, complete the captcha';
             redirect();
         }
         $this->setMeta('Registration - Utile');
+    }
+
+    protected function getCaptchaData() {
+        $captcha_response = $_POST['g-recaptcha-response'];
+        $captcha_remote_ip = $_SERVER['REMOTE_ADDR'];
+        $url_data  = App::$app->getProperty('captcha_url') . '?secret=' . App::$app->getProperty('captcha_secret');
+        $url_data .= '&response=' . $captcha_response . '&remoteip=' . $captcha_remote_ip;
+        return $url_data;
+    }
+
+    protected function passCaptchaUrl($url_data) {
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url_data);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        $curl_res = curl_exec($curl);
+        curl_close($curl);
+        return $curl_res;
     }
 
     public function loginAction() {

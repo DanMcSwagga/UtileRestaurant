@@ -18,6 +18,7 @@
                 <div class="contact-form-forgot-container flex" data-aos="upSlideLong" data-aos-once="true" data-aos-duration="850">
                     <a href="user/forgot" class="contact-form-forgot"><span>Forgot password?</span></a>
                 </div>
+                <div style="display:inline-block;" class="g-recaptcha captcha-content" data-sitekey="6LcNGF0UAAAAAGBdwYW7y0e_JvOu8ty_l1d7RhkU"></div>
                 <p class='field field-button' data-aos="upSlideLong" data-aos-duration="600" data-aos-once="true">
                     <input class='button backslash' type='submit' value='Log In'>
                 </p>

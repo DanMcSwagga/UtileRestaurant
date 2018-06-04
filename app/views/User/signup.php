@@ -27,6 +27,7 @@
                     <label class='label' for='address'>Address</label>
                     <input class='text-input' id='address' name='address' type="name" required>
                 </p>
+                <div style="display:inline-block;" class="g-recaptcha captcha-content" data-sitekey="6LcNGF0UAAAAAGBdwYW7y0e_JvOu8ty_l1d7RhkU"></div>
                 <p class='field field-button' data-aos="upSlideLong" data-aos-duration="700" data-aos-once="true">
                     <input class='button backslash' type='submit' value='Sign Up'>
                 </p>

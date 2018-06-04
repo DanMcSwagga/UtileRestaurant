@@ -66,40 +66,6 @@ class User extends AppModel {
         return false;
     }
 
-    public static function checkAuth(){
-        return isset($_SESSION['user']);
-    }
-
-    public static function isAdmin(){
-        return (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin');
-    }
-
-    public function sendmail() {
-        $email = !empty(trim($_POST['email-fg'])) ? trim($_POST['email-fg']) : null;
-        if ($email) {
-            $user = \R::findOne('user', 'email = ?', [$email]);
-            if ($user) {
-                $this->load($user);
-                $_SESSION['message'] = "<p>Check your email <span>{$email}</span>"
-                    . " for a confirmation link to complete your password reset</p>";
-
-                $to      = $user->email;
-                $subject = 'Password Reset Link - Utile Restaurant';
-                $message_body = 'Hello ' . $user->name . ',
-You have requested password reset!
-Please click this link to reset your password:
-http://localhost/user/check?email=' . $user->email . '&hash=' . $user->password;
-
-                return @mail($to, $subject, $message_body);
-            } else {
-                $this->errors['non-matching'][] = 'User with this <b>email</b> doesn\'t exist';
-            }
-        } else {
-            $this->errors['invalid'][] = 'This <b>email</b> is invalid';
-        }
-        return false;
-    }
-
     public function checkPassword() {
         $email = $_GET['email'];
         $hash = $_GET['hash'];
@@ -134,6 +100,40 @@ http://localhost/user/check?email=' . $user->email . '&hash=' . $user->password;
             return true;
         }
         return false;
+    }
+
+    public function sendmail() {
+        $email = !empty(trim($_POST['email-fg'])) ? trim($_POST['email-fg']) : null;
+        if ($email) {
+            $user = \R::findOne('user', 'email = ?', [$email]);
+            if ($user) {
+                $this->load($user);
+                $_SESSION['message'] = "<p>Check your email <span>{$email}</span>"
+                    . " for a confirmation link to complete your password reset</p>";
+
+                $to      = $user->email;
+                $subject = 'Password Reset Link - Utile Restaurant';
+                $message_body = 'Hello ' . $user->name . ',
+You have requested password reset!
+Please click this link to reset your password:
+http://localhost/user/check?email=' . $user->email . '&hash=' . $user->password;
+
+                return @mail($to, $subject, $message_body);
+            } else {
+                $this->errors['non-matching'][] = 'User with this <b>email</b> doesn\'t exist';
+            }
+        } else {
+            $this->errors['invalid'][] = 'This <b>email</b> is invalid';
+        }
+        return false;
+    }
+
+    public static function checkAuth(){
+        return isset($_SESSION['user']);
+    }
+
+    public static function isAdmin(){
+        return (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin');
     }
 
 }

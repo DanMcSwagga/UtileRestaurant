@@ -9,4 +9,7 @@ return [
     'smtp_protocol' => 'ssl',
     'smtp_login' => 'utilerestaurant@ukr.net',
     'smtp_password' => '12081998D',
+
+    'captcha_secret' => '6LcNGF0UAAAAAOo7zohmd_8WdZRtX8llKKtKztki',
+    'captcha_url' => 'https://www.google.com/recaptcha/api/siteverify',
 ];
