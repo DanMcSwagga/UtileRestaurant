@@ -9,11 +9,11 @@
             <div class="has-feedback">
                 <p class='field required half italic' data-aos="upSlideLong" data-aos-once="true">
                     <label class='label' for='login-sup'>Login</label>
-                    <input class='text-input' id='login-sup' name='login-sup' type='text' value="<?= $_SESSION['temp_user']['login-sup']?? ""; ?>" required>
+                    <input autocomplete="off" class='text-input' id='login-sup' name='login-sup' type='text' value="<?= $_SESSION['temp_user']['login-sup']?? ""; ?>" required>
                 </p>
                 <p class='field required half italic' data-aos="upSlideLong" data-aos-once="true">
                     <label class='label' for='password-sup'>Password</label>
-                    <input class='text-input' id='password-sup' name='password-sup' min="6" type='password' required>
+                    <input autocomplete="off" class='text-input' id='password-sup' name='password-sup' min="6" type='password' required>
                 </p>
                 <div class="contact-form-forgot-container flex" data-aos="upSlideLong" data-aos-once="true" data-aos-duration="850">
                     <a href="user/forgot" class="contact-form-forgot"><span>Forgot password?</span></a>

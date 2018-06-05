@@ -21,34 +21,33 @@
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <div class="box full-w">
+            <div class="box" style="width: 100%;">
                 <div class="box-body">
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover">
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Buyer</th>
+                                <th>Сategory</th>
+                                <th>Title</th>
+                                <th>Price</th>
+                                <th>Special</th>
                                 <th>Status</th>
-                                <th>Sum</th>
-                                <th>Date of creation</th>
-                                <th>Date of change</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($orders as $order): ?>
-                                <?php $class = $order['status'] ? 'alert-info' : '' ?>
-                                <tr class="<?= $class; ?>">
-                                    <td><?= $order['id'] ?></td>
-                                    <td><?= $order['name'] ?></td>
-                                    <td><?= $order['status'] ? 'Completed' : 'New' ?></td>
-                                    <td><?= $order['sum'] ?> <?= $order['currency'] ?></td>
-                                    <td><?= $order['date'] ?></td>
-                                    <td><?= $order['update_at'] ?></td>
+                            <?php foreach ($products as $product): ?>
+                                <tr>
+                                    <td><?= $product['id']; ?></td>
+                                    <td><?= $product['cat']; ?></td>
+                                    <td><?= $product['title']; ?></td>
+                                    <td><?= $product['price']; ?></td>
+                                    <td><?= $product['special'] ? 'Yes' : 'No'; ?></td>
+                                    <td><?= $product['status'] ? 'On' : 'Off'; ?></td>
                                     <td>
-                                        <a href="<?= ADMIN; ?>/order/view?id=<?= $order['id']; ?>"><i class="fa fa-fw fa-eye"></i></a>
-                                        <a class="delete" href="<?=ADMIN;?>/order/delete?id=<?=$order['id'];?>"><i class="fa fa-fw fa-close text-danger"></i></a>
+                                        <a href="<?= ADMIN; ?>/product/edit?id=<?= $product['id']; ?>"><i class="fa fa-fw fa-eye"></i></a>
+                                        <a class="delete" href="<?=ADMIN;?>/product/delete?id=<?=$product['id'];?>"><i class="fa fa-fw fa-close text-danger"></i></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -56,7 +55,7 @@
                         </table>
                     </div>
                     <div class="text-center">
-                        <p>(<?= count($orders); ?> / <?= $count ?>)</p>
+                        <p>(<?= count($products); ?> / <?= $count ?>)</p>
                         <?php if ($pagination->countPages > 1): ?>
                             <?= $pagination; ?>
                         <?php endif; ?>

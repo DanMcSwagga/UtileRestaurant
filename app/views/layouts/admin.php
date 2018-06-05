@@ -114,52 +114,53 @@
                             </li>
                         </ul>
                     </li>
+<!--                    <li class="nav-item">-->
+<!--                        <a href="--><?//= ADMIN ?><!--/cache" class="nav-link">-->
+<!--                            <i class="fa fa-database"></i>-->
+<!--                            <p>Cache</p>-->
+<!--                        </a>-->
+<!--                    </li>-->
                     <li class="nav-item">
-                        <a href="<?= ADMIN ?>/cache" class="nav-link">
-                            <i class="fa fa-database"></i>
-                            <p>Cache</p>
-                        </a>
-                    </li>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
+                        <a href="<?= ADMIN; ?>/user" class="nav-link">
                             <i class="nav-icon fa fa-users"></i>
-                            <p>Users<i class="right fa fa-angle-left"></i></p>
+                            <p>Users</p>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?= ADMIN; ?>/user" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List of Users</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?= ADMIN; ?>/user/add" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add a User</p>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="fa fa-usd"></i>
-                            <p>Currencies</p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?= ADMIN ?>/currency" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>List of Currencies</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?= ADMIN ?>/currency/add" class="nav-link">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Add a Currency</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+<!--                        <ul class="nav nav-treeview">-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="--><?//= ADMIN; ?><!--/user" class="nav-link">-->
+<!--                                    <i class="fa fa-circle-o nav-icon"></i>-->
+<!--                                    <p>List of Users</p>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="--><?//= ADMIN; ?><!--/user/add" class="nav-link">-->
+<!--                                    <i class="fa fa-circle-o nav-icon"></i>-->
+<!--                                    <p>Add a User</p>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item has-treeview">-->
+<!--                        <a href="#" class="nav-link">-->
+<!--                            <i class="fa fa-usd"></i>-->
+<!--                            <p>Currencies</p>-->
+<!--                        </a>-->
+<!--                        <ul class="nav nav-treeview">-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="--><?//= ADMIN ?><!--/currency" class="nav-link">-->
+<!--                                    <i class="fa fa-circle-o nav-icon"></i>-->
+<!--                                    <p>List of Currencies</p>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="--><?//= ADMIN ?><!--/currency/add" class="nav-link">-->
+<!--                                    <i class="fa fa-circle-o nav-icon"></i>-->
+<!--                                    <p>Add a Currency</p>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

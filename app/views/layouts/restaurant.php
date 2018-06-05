@@ -43,7 +43,7 @@
                 <li class="header-menu-unit"><a class="header-menu-link" href="#contact">Contact</a></li>
                 <ul class="header-menu-unit user-action flex">
                     <?php if (!empty($_SESSION['user'])): ?>
-                    <li><a href="#"><?= $_SESSION['user']['login']; ?></a></li>
+                    <li><a href=""><?= $_SESSION['user']['login']; ?></a></li>
                     <li><a href="user/logout">Log Out</a></li>
                     <?php else: ?>
                     <li><a href="user/signup">Sign Up</a></li>

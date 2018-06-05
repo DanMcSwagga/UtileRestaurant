@@ -19,4 +19,14 @@ class AppModel extends Model {
         return $str;
     }
 
+    public static function str2url($str) {
+        // в нижний регистр
+        $str = strtolower($str);
+        // заменям все ненужное нам на "-"
+        $str = preg_replace('~[^-a-z0-9_]+~u', '-', $str);
+        // удаляем начальные и конечные '-'
+        $str = trim($str, "-");
+        return $str;
+    }
+
 }

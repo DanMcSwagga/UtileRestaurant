@@ -31,4 +31,11 @@ class Product extends AppModel{
         ],
     ];
 
+//    public function getImg(){
+//        if(!empty($_SESSION['single'])){
+//            $this->attributes['img'] = $_SESSION['single'];
+//            unset($_SESSION['single']);
+//        }
+//    }
+
 }

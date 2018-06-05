@@ -9,7 +9,7 @@
             <div class="has-feedback">
                 <p class='field required italic' data-aos="upSlideLong" data-aos-once="true">
                     <label class='label' for='email-fg'>Valid Email</label>
-                    <input class='text-input' id='email-fg' name='email-fg' type='email' required>
+                    <input autocomplete="off" class='text-input' id='email-fg' name='email-fg' type='email' required>
                 </p>
                 <p class='field field-button' data-aos="upSlideLong" data-aos-duration="600" data-aos-once="true">
                     <input class='button backslash' type='submit' value='Send'>
