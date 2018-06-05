@@ -3,11 +3,19 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Order #<?= $order['id']; ?></h1>
+                <h1 class="m-0 text-dark">
+                    Order #<?= $order['id']; ?>
+                    <?php if(!$order['status']): ?>
+                        <a href="<?= ADMIN; ?>/order/change?id=<?= $order['id']; ?>&status=1" class="btn btn-success btn-xs offset-left">Approve</a>
+                    <?php else: ?>
+                        <a href="<?= ADMIN; ?>/order/change?id=<?= $order['id']; ?>&status=0" class="btn btn-default btn-xs offset-left">Revise</a>
+                    <?php endif; ?>
+                    <a href="<?= ADMIN; ?>/order/delete?id=<?= $order['id']; ?>" class="btn btn-danger btn-xs delete offset-left">Delete</a>
+                </h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item">Main</li>
+                    <li class="breadcrumb-item"><a href="<?= ADMIN; ?>">Main</a></li>
                     <li class="breadcrumb-item"><a href="<?= ADMIN; ?>/order">List of orders</a></li>
                     <li class="breadcrumb-item active">Order #<?= $order['id']; ?></li>
                 </ol>

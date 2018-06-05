@@ -2,7 +2,7 @@
 
 function debug($arr, $die = false) {
     echo '<pre>';
-    echo print_r($arr, true);
+    echo var_dump($arr, true);
     echo '</pre>';
     if ($die) die;
 }

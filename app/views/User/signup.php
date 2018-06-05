@@ -9,7 +9,7 @@
             <div class="has-feedback">
                 <p class='field required half italic' data-aos="upSlideLong" data-aos-once="true">
                     <label class='label required' for='login'>Login</label>
-                    <input class='text-input' id='login' name='login' maxlength="20" type='text' required>
+                    <input class='text-input' id='login' name='login' maxlength="20" type='text' value="<?= $_SESSION['temp_user']['login']?? ""; ?>" required>
                 </p>
                 <p class='field required half italic' data-aos="upSlideLong" data-aos-once="true">
                     <label class='label' for='password'>Password</label>
@@ -17,15 +17,15 @@
                 </p>
                 <p class='field required italic' data-aos="upSlideLong" data-aos-once="true">
                     <label class='label required' for='name'>Name</label>
-                    <input class='text-input' id='name' name='name' type='text' required>
+                    <input class='text-input' id='name' name='name' type='text' value="<?= $_SESSION['temp_user']['name']?? ""; ?>" required>
                 </p>
                 <p class='field required italic' data-aos="upSlideLong" data-aos-once="true">
                     <label class='label' for='email'>Email</label>
-                    <input class='text-input' id='email' name='email' type="email" required>
+                    <input class='text-input' id='email' name='email' type="email" value="<?= $_SESSION['temp_user']['email']?? ""; ?>" required>
                 </p>
                 <p class='field required italic' data-aos="upSlideLong" data-aos-once="true">
                     <label class='label' for='address'>Address</label>
-                    <input class='text-input' id='address' name='address' type="name" required>
+                    <input class='text-input' id='address' name='address' type="name" value="<?= $_SESSION['temp_user']['address']?? ""; ?>" required>
                 </p>
                 <div style="display:inline-block;" class="g-recaptcha captcha-content" data-sitekey="6LcNGF0UAAAAAGBdwYW7y0e_JvOu8ty_l1d7RhkU"></div>
                 <p class='field field-button' data-aos="upSlideLong" data-aos-duration="700" data-aos-once="true">

@@ -61,6 +61,7 @@ class UserController extends AppController {
                 $_SESSION['error'] = 'Login/password are incorrect';
             }
             if (User::isAdmin()) {
+                unset($_SESSION['temp_user']);
                 redirect(ADMIN);
             } else {
                 redirect();

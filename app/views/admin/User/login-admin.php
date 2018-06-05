@@ -1,6 +1,6 @@
 <div class="login-box">
     <div class="login-logo">
-        <b>Admin</b>LTE
+        <b>Login</b>
     </div>
     <!-- /.login-logo -->
     <div class="card">
@@ -17,7 +17,7 @@
 
             <form action="<?= ADMIN; ?>/user/login-admin" method="post">
                 <div class="form-group has-feedback">
-                    <input name="login-sup" type="text" class="form-control" placeholder="Login">
+                    <input name="login-sup" type="text" class="form-control" placeholder="Login" value="<?= $_SESSION['temp_user']['login-sup']?? ""; ?>">
                     <span class="fa fa-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">

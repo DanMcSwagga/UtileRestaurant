@@ -39,14 +39,17 @@ class OrderController extends AppController {
 
     public function changeAction() {
         $order_id = $this->getRequestID();
-        $status = !empty($_GET['status']) ? '1' : '0';
+        $status = !empty($_GET['status']);
         $order = \R::load('order', $order_id);
         if (!$order) {
             throw new \Exception('Page not found', 404);
         }
         $order->status = $status;
         $order->update_at = date("Y-m-d H:i:s");
+//        debug($order);
         \R::store($order);
+        $temp = \R::findOne('order', 'id = ?', [$order->id]);
+//        debug($temp, 1);
         $_SESSION['success'] = 'Changes have been saved';
         redirect();
     }
@@ -55,7 +58,7 @@ class OrderController extends AppController {
         $order_id = $this->getRequestID();
         $order = \R::load('order', $order_id);
         \R::trash($order);
-        $_SESSION['success'] = 'Order has been delete';
+        $_SESSION['success'] = 'Order has been deleted';
         redirect(ADMIN . '/order');
     }
 

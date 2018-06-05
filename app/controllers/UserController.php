@@ -9,11 +9,14 @@ class UserController extends AppController{
 
     public function signupAction() {
         if (!empty($_POST)) {
-            if (!empty($_POST['g-recaptcha-response'])) {
-                $user = new User();
-                $data = $_POST;
-                $user->load($data);
+            $user = new User();
+            $data = $_POST;
+            $user->load($data);
 
+            // save temporary post input
+            $_SESSION['temp_user'] = $data;
+
+            if (!empty($_POST['g-recaptcha-response'])) {
                 $url_data = $this->getCaptchaData();
                 $result = json_decode($this->passCaptchaUrl($url_data));
 
@@ -30,6 +33,8 @@ class UserController extends AppController{
                             foreach ($user->attributes as $key => $value) {
                                 $_SESSION['user'][$key] = $value;
                             }
+
+                            unset($_SESSION['temp_user']);
                             $_SESSION['success'] = 'Registration successful';
                             redirect('/');
                         } else {
@@ -38,10 +43,10 @@ class UserController extends AppController{
                     }
                 }
                 $_SESSION['error'] = 'Stop it, naughty bot';
-                redirect();
+//                redirect();
             }
             $_SESSION['error'] = 'Please, complete the captcha';
-            redirect();
+//            redirect();
         }
         $this->setMeta('Registration - Utile');
     }
@@ -67,7 +72,9 @@ class UserController extends AppController{
     public function loginAction() {
         if (!empty($_POST)) {
             $user = new User();
+
             if ($user->login()) {
+                unset($_SESSION['temp_user']);
                 $_SESSION['success'] = 'Authorization successful';
                 redirect('/');
             } else {

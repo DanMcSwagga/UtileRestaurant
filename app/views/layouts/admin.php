@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
+    <!-- Personal -->
+    <link rel="stylesheet" href="my.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -167,6 +169,16 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+        <?php if(isset($_SESSION['error'])): ?>
+            <div class="alert alert-danger registration-alert">
+                <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
+            </div>
+        <?php endif; ?>
+        <?php if(isset($_SESSION['success'])): ?>
+            <div class="alert alert-success">
+                <?php echo $_SESSION['success']; unset($_SESSION['success']); ?>
+            </div>
+        <?php endif; ?>
         <?= $content; ?>
     </div>
     <!-- /.content-wrapper -->
@@ -204,6 +216,8 @@
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.js"></script>
+<!-- Personal -->
+<script src="my.js"></script>
 
 <?php
 //$logs = \R::getDatabaseAdapter()

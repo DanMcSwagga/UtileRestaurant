@@ -9,7 +9,7 @@
             <div class="has-feedback">
                 <p class='field required half italic' data-aos="upSlideLong" data-aos-once="true">
                     <label class='label' for='login-sup'>Login</label>
-                    <input class='text-input' id='login-sup' name='login-sup' type='text' required>
+                    <input class='text-input' id='login-sup' name='login-sup' type='text' value="<?= $_SESSION['temp_user']['login-sup']?? ""; ?>" required>
                 </p>
                 <p class='field required half italic' data-aos="upSlideLong" data-aos-once="true">
                     <label class='label' for='password-sup'>Password</label>

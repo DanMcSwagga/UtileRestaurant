@@ -45,6 +45,9 @@ class User extends AppModel {
     public function login($isAdmin = false) {
         $login = !empty(trim($_POST['login-sup'])) ? trim($_POST['login-sup']) : null;
         $password = !empty(trim($_POST['password-sup'])) ? trim($_POST['password-sup']) : null;
+
+        $_SESSION['temp_user']['login-sup'] = $_POST['login-sup'];
+
         if ($login && $password) {
             if ($isAdmin) {
                 $user = \R::findOne('user', "login = ? AND role = 'admin'", [$login]);
