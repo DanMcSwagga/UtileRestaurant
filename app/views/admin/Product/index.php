@@ -46,7 +46,7 @@
                                     <td><?= $product['special'] ? 'Yes' : 'No'; ?></td>
                                     <td><?= $product['status'] ? 'On' : 'Off'; ?></td>
                                     <td>
-                                        <a href="<?= ADMIN; ?>/product/edit?id=<?= $product['id']; ?>"><i class="fa fa-fw fa-eye"></i></a>
+                                        <a href="<?= ADMIN; ?>/product/edit?id=<?= $product['id']; ?>"><i class="fa fa-fw fa-edit"></i></a>
                                         <a class="delete" href="<?=ADMIN;?>/product/delete?id=<?=$product['id'];?>"><i class="fa fa-fw fa-close text-danger"></i></a>
                                     </td>
                                 </tr>
