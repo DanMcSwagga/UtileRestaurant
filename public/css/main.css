@@ -709,7 +709,6 @@ footer {
   border: 1.5px solid #f4ba18;
 }
 
-
 /*** CHECKOUT ***/
 .checkout-table-container {
   /*min-height: 100vh;*/
@@ -724,4 +723,9 @@ footer {
 }
 .table > tbody > tr > td:last-child {
   text-align: right;
+}
+
+.captcha-container {
+  margin-top: 10px;
+  justify-content: center;
 }

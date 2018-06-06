@@ -5,5 +5,3 @@ require_once LIBS . '/functions.php';
 require_once CONF . '/routes.php';
 
 new \utile\App();
-
-//debug(\utile\Router::getRoutes());

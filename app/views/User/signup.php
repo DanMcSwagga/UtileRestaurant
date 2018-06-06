@@ -27,8 +27,10 @@
                     <label class='label' for='address'>Address</label>
                     <input autocomplete="off" class='text-input' id='address' name='address' type="name" value="<?= $_SESSION['temp_user']['address']?? ""; ?>" required>
                 </p>
-                <div style="display:inline-block;" class="g-recaptcha captcha-content" data-sitekey="6LcNGF0UAAAAAGBdwYW7y0e_JvOu8ty_l1d7RhkU"></div>
-                <p class='field field-button' data-aos="upSlideLong" data-aos-duration="700" data-aos-once="true">
+                <div class="field captcha-container flex " data-aos="upSlideLong" data-aos-duration="600" data-aos-once="true">
+                    <div style="display:inline-block; border: 1.5px solid #7f7f7f" class="g-recaptcha captcha-content" data-sitekey="6LcNGF0UAAAAAGBdwYW7y0e_JvOu8ty_l1d7RhkU"></div>
+                </div>
+                <p class='field field-button' data-aos="upSlideLong" data-aos-duration="750" data-aos-once="true">
                     <input class='button backslash' type='submit' value='Sign Up'>
                 </p>
             </div>
