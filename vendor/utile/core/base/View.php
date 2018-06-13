@@ -35,8 +35,11 @@ class View {
 
         $viewFile = APP . "/views/{$this->prefix}{$this->controller}/{$this->view}.php";
         if (is_file($viewFile)) {
+            $cacheFile = CACHE . '/view_template_cache.php';
+            parse_template($viewFile, $cacheFile);
+
             ob_start();
-            require_once $viewFile;
+            require_once $cacheFile;
             $content = ob_get_clean();
         } else {
             throw new \Exception("View {$viewFile} not found", 500);
@@ -44,8 +47,12 @@ class View {
 
         if (false !== $this->layout) {
             $layoutFile = APP . "/views/layouts/{$this->layout}.php";
+
             if (is_file($layoutFile)) {
-                require_once $layoutFile;
+                $cacheFile = CACHE . '/layout_template_cache.php';
+                parse_template($layoutFile, $cacheFile);
+
+                require_once $cacheFile;
             } else {
                 throw new \Exception("Layout {$this->layout} not found", 500);
             }

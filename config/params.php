@@ -10,6 +10,6 @@ return [
     'smtp_login' => 'utilerestaurant@ukr.net',
     'smtp_password' => '12081998D',
 
-    'captcha_secret' => '6LcNGF0UAAAAAOo7zohmd_8WdZRtX8llKKtKztki',
+    'captcha_secret' => '6LccSl4UAAAAAPP_LiKQi8O68G84BhLvJUF028k9',
     'captcha_url' => 'https://www.google.com/recaptcha/api/siteverify',
 ];

@@ -24,6 +24,7 @@ class UserController extends AppController{
                 if ($result->success) {
                     if (!$user->validate($data) || !$user->checkUnique()) {
                         $user->getErrors();
+                        redirect();
                     } else {
                         $user->attributes['password'] = password_hash($user->attributes['password'], PASSWORD_DEFAULT);
                         if ($user->save('user')) {
@@ -43,10 +44,10 @@ class UserController extends AppController{
                     }
                 }
                 $_SESSION['error'] = 'Stop it, naughty bot';
-//                redirect();
+               redirect();
             }
             $_SESSION['error'] = 'Please, complete the captcha';
-//            redirect();
+           redirect();
         }
         $this->setMeta('Registration - Utile');
     }
@@ -87,6 +88,12 @@ class UserController extends AppController{
     public function logoutAction() {
         if (isset($_SESSION['user'])) {
             unset($_SESSION['user']);
+        }
+        if (isset($_SESSION['cart'])) {
+            unset($_SESSION['cart']);
+            unset($_SESSION['cart.currency']);
+            unset($_SESSION['cart.qty']);
+            unset($_SESSION['cart.sum']);
         }
         redirect();
     }

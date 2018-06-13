@@ -14,7 +14,7 @@ define("LAYOUT", 'restaurant');
 $app_path = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}";
 // http://localhost/utile/public/
 $app_path = preg_replace("#[^/]+$#", '', $app_path);
-// http://v
+// http://localhost/utile
 $app_path = str_replace('/public/', '', $app_path);
 define("PATH", $app_path);
 define("ADMIN", PATH . '/admin');

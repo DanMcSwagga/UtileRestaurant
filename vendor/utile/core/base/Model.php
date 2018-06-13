@@ -60,4 +60,16 @@ abstract class Model {
         $_SESSION['error'] = $errors;
     }
 
+    public function __get($name) {
+        if (!empty($this->attributes)) {
+            return array_key_exists($name, $this->attributes) ? $this->attributes[$name] : null;
+        } else {
+            return null;
+        }
+    }
+
+    public function __set($name, $value) {
+        $this->attributes[$name] = $value;
+    }
+
 }

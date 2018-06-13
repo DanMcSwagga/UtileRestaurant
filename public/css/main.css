@@ -721,6 +721,9 @@ footer {
 .checkout-note {
   margin-top: 20px;
 }
+/*.checkout-note > textarea {
+  min-height: 80px;
+}*/
 .table > tbody > tr > td:last-child {
   text-align: right;
 }

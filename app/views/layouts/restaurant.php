@@ -23,7 +23,7 @@
 <!--    <link rel="stylesheet" href="css/hamburger-responsive.css">-->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <?=$this->getMeta();?>
+    {{ $this->getMeta() }}
 
 </head>
 <body>
@@ -36,19 +36,19 @@
 
         <div class="fifty-percent-block header-menu-container flex">
             <ul class="header-menu flex" data-aos="leftSlideLong" data-aos-duration="550" data-aos-once="true">
-                <li class="header-menu-unit"><a class="header-menu-link" href="<?= PATH; ?>">Home</a></li>
+                <li class="header-menu-unit"><a class="header-menu-link" href="{{ PATH; }}">Home</a></li>
 <!--                <li class="header-menu-unit"><a class="header-menu-link" href="#specials">Specials</a></li>-->
 <!--                <li class="header-menu-unit"><a class="header-menu-link" href="#about">About</a></li>-->
 <!--                <li class="header-menu-unit"><a class="header-menu-link" href="#menu">Menu</a></li>-->
                 <li class="header-menu-unit"><a class="header-menu-link" href="#contact">Contact</a></li>
                 <ul class="header-menu-unit user-action flex">
-                    <?php if (!empty($_SESSION['user'])): ?>
-                    <li><a href=""><?= $_SESSION['user']['login']; ?></a></li>
+                    <!-- if !empty($_SESSION['user']) -->
+                    <li><a href="">{{ $_SESSION['user']['login']; }}</a></li>
                     <li><a href="user/logout">Log Out</a></li>
-                    <?php else: ?>
+                    <!-- else -->
                     <li><a href="user/signup">Sign Up</a></li>
                     <li><a href="user/login">Sign In</a></li>
-                    <?php endif; ?>
+                    <!-- endif -->
                 </ul>
             </ul>
             <ul class="header-menu flex" data-aos="leftSlideLong" data-aos-duration="550" data-aos-once="true">
@@ -56,11 +56,11 @@
                     <a class="header-cart-link" href="cart/show" onclick="getCart(); return false">
                         <div class="header-cart-container flex">
                             <img src="/lib/icons/icon-cart.svg" alt="" class="header-cart-image">
-                            <?php if (!empty($_SESSION['cart'])): ?>
-                            <span class="header-cart-info"><?= $_SESSION['cart.currency']['symbol_left'] . $_SESSION['cart.sum'] . $_SESSION['cart.currency']['symbol_right']; ?></span>
-                            <?php else: ?>
+                            <!-- if !empty($_SESSION['cart']) -->
+                            <span class="header-cart-info">{{ $_SESSION['cart.currency']['symbol_left'] . $_SESSION['cart.sum'] . $_SESSION['cart.currency']['symbol_right']; }}</span>
+                            <!-- else -->
                             <span class="header-cart-info">Empty Cart</span>
-                            <?php endif; ?>
+                            <!-- endif -->
                         </div>
                     </a>
                 </li>
@@ -70,76 +70,25 @@
     </div>
 </header>
 
-<!-- BOXED HEADER -->
-<!--<div class="fs_menu_overlay"></div>-->
-<!--<div class="hamburger_menu">-->
-<!--    <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>-->
-<!--    <div class="hamburger_menu_content text-right">-->
-<!--        <ul class="menu_top_nav">-->
-<!--            <li class="menu_item has-children">-->
-<!--                <a href="#">-->
-<!--                    usd-->
-<!--                    <i class="fa fa-angle-down"></i>-->
-<!--                </a>-->
-<!--                <ul class="menu_selection">-->
-<!--                    <li><a href="#">cad</a></li>-->
-<!--                    <li><a href="#">aud</a></li>-->
-<!--                    <li><a href="#">eur</a></li>-->
-<!--                    <li><a href="#">gbp</a></li>-->
-<!--                </ul>-->
-<!--            </li>-->
-<!--            <li class="menu_item has-children">-->
-<!--                <a href="#">-->
-<!--                    English-->
-<!--                    <i class="fa fa-angle-down"></i>-->
-<!--                </a>-->
-<!--                <ul class="menu_selection">-->
-<!--                    <li><a href="#">French</a></li>-->
-<!--                    <li><a href="#">Italian</a></li>-->
-<!--                    <li><a href="#">German</a></li>-->
-<!--                    <li><a href="#">Spanish</a></li>-->
-<!--                </ul>-->
-<!--            </li>-->
-<!--            <li class="menu_item has-children">-->
-<!--                <a href="#">-->
-<!--                    My Account-->
-<!--                    <i class="fa fa-angle-down"></i>-->
-<!--                </a>-->
-<!--                <ul class="menu_selection">-->
-<!--                    <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>-->
-<!--                    <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>-->
-<!--                </ul>-->
-<!--            </li>-->
-<!--            <li class="menu_item"><a href="#">home</a></li>-->
-<!--            <li class="menu_item"><a href="#">shop</a></li>-->
-<!--            <li class="menu_item"><a href="#">promotion</a></li>-->
-<!--            <li class="menu_item"><a href="#">pages</a></li>-->
-<!--            <li class="menu_item"><a href="#">blog</a></li>-->
-<!--            <li class="menu_item"><a href="#">contact</a></li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</div>-->
-
 
 <div class="content">
     <div class="registration-alert-container">
         <div class="row">
             <div class="col-md-12">
-                <?php if(isset($_SESSION['error'])): ?>
+                <!-- if isset($_SESSION['error']) -->
                     <div class="alert alert-danger registration-alert">
-                        <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
+                        @@ echo $_SESSION['error']; unset($_SESSION['error']);
                     </div>
-                <?php endif; ?>
-                <?php if(isset($_SESSION['success'])): ?>
+                <!-- endif -->
+                <!-- if isset($_SESSION['success']) -->
                     <div class="alert alert-info">
-                        <?php echo $_SESSION['success']; unset($_SESSION['success']); ?>
+                        @@ echo $_SESSION['success']; unset($_SESSION['success']);
                     </div>
-                <?php endif; ?>
+                <!-- endif -->
             </div>
         </div>
     </div>
-<!--    --><?php //debug($_SESSION); ?>
-    <?=$content;?>
+    {{ $content }}
 </div>
 
 <section class="contact-section flex" id="contact">

@@ -77,7 +77,7 @@
                 </div>
                 <?php endif; ?>
                 <div class="has-feedback">
-                    <p class='field italic checkout-note' data-aos="upSlideLong" data-aos-once="false">
+                    <p class='field italic checkout-note' data-aos="upSlideLong" data-aos-once="true">
                         <label class='label' for='note'>Note (not required)</label>
                         <textarea class='textarea' cols='50' id='note' name='note' rows='4'></textarea>
                     </p>

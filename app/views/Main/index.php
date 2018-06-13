@@ -1,8 +1,7 @@
 <!--CURRENCY PICKER-->
 <div class="currency-picker-container">
     <select id="currency" class="currency-picker bold">
-        <?php $curr = new \app\widgets\currency\Currency(); ?>
-        <?php debug($curr); ?>
+        @@ $curr = new \app\widgets\currency\Currency();
     </select>
 </div>
 
@@ -58,8 +57,8 @@
 </section>
 
 
-<?php if ($specials): ?>
-<?php $curr = \utile\App::$app->getProperty('currency'); ?>
+<!-- if $specials -->
+@@ $curr = \utile\App::$app->getProperty('currency');
 <section class="specials-section" id="specials" data-scroll-reveal="enter from the bottom after 0.9s">
     <div class="specials-wrapper">
 
@@ -68,30 +67,30 @@
 
         <div class="specials-catalogue-container flex">
 
-            <?php foreach ($specials as $special): ?>
+            <!-- foreach ($specials as $special) -->
                 <div class="specials-catalogue-unit flex">
                     <div class="specials-catalogue-image-container">
-                        <a href="product/<?=$special->alias;?>">
-                            <img src="/lib/img/<?=$special->img;?>" alt="" class="specials-catalogue-image">
+                        <a href="product/{{ $special->alias; }}">
+                            <img src="/lib/img/{{ $special->img; }}" alt="" class="specials-catalogue-image">
                         </a>
                     </div>
                     <div class="specials-catalogue-info flex text-centered" data-aos="simpleAppear" data-aos-once="false">
-                        <h2 class="bold"><a href="product/<?=$special->alias;?>"><?=$special->title;?></a></h2>
+                        <h2 class="bold"><a href="product/<?=$special->alias;?>">{{ $special->title; }}</a></h2>
                         <div class="specials-catalogue-info-divider"></div>
-                        <p class=""><?=$special->content;?></p>
+                        <p class="">{{ $special->content }}</p>
                         <div class="specials-catalogue-cart-container flex">
-                            <a class="specials-catalogue-cart add-to-cart-link" data-id="<?=$special->id;?>" href="cart/add?id=<?=$special->id;?>"><img src="/lib/icons/icon-cart.svg" alt=""></a>
-                            <span class="bold"><?= $curr['symbol_left']; ?><?=$special->price * $curr['value'];?><?= $curr['symbol_right']; ?></span>
+                            <a class="specials-catalogue-cart add-to-cart-link" data-id="{{ $special->id; }}" href="cart/add?id=<?=$special->id;?>"><img src="/lib/icons/icon-cart.svg" alt=""></a>
+                            <span class="bold">{{ $curr['symbol_left'] . $special->price * $curr['value'] . $curr['symbol_right']; }}</span>
                         </div>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            <!-- endforeach -->
 
         </div>
 
     </div>
 </section>
-<?php endif; ?>
+<!-- endif -->
 
 
 <section class="about-section" id="about">
@@ -109,7 +108,7 @@
 </section>
 
 
-<?php if ($products): ?>
+<!-- if $products -->
 <section class="menu-section" id="menu">
     <div class="menu-container flex">
 
@@ -119,37 +118,37 @@
         </div>
 
         <ul class="menu-navigation-container flex" data-tabgroup="navigation-tab-group" data-aos="downSlideShort" data-aos-duration="400" data-aos-once="false">
-            <?php foreach ($categories as $category): ?>
-                <?php if ($category->id == 1): ?>
-                    <li class="menu-navigation-unit"><a href="#tab<?= $category->id; ?>" class="menu-navigation-link active-tab"><?= $category->title; ?></a></li>
-                <?php else: ?>
+            @@ foreach ($categories as $category):
+                @@ if ($category->id == 1):
+                    <li class="menu-navigation-unit"><a href="#tab<?= $category->id; ?>" class="menu-navigation-link active-tab">{{ $category->title; }}</a></li>
+                @@ else:
                     <li class="menu-navigation-unit">
-                        <a href="#tab<?= $category->id; ?>" class="menu-navigation-link"><?= $category->title; ?></a>
+                        <a href="#tab<?= $category->id; ?>" class="menu-navigation-link">{{ $category->title; }}</a>
                     </li>
-                <?php endif; ?>
-            <?php endforeach; ?>
+                @@ endif;
+            @@ endforeach;
         </ul>
 
         <section class="menu-cart-wrapper flex tabgroup" id="navigation-tab-group" data-aos="downSlideShort" data-aos-once="false">
 
-            <?php foreach ($categories as $category): ?>
+            @@ foreach ($categories as $category):
             <div class="menu-cart-container light flex" id="tab<?= $category->id; ?>">
-                <?php foreach ($products as $product): ?>
-                    <?php if ($product->category_id == $category->id): ?>
+                @@ foreach ($products as $product):
+                    @@ if ($product->category_id == $category->id):
                     <ul class="menu-cart-item-container flex">
-                        <a href="product/<?=$product->alias;?>"><li class="menu-cart-item-title"><?= $product->title; ?></li></a>
+                        <a href="product/<?= $product->alias ?>"><li class="menu-cart-item-title">{{ $product->title; }}</li></a>
                         <li class="menu-cart-empty-dotted"></li>
-                        <li class="menu-cart-item-price"><?= $curr['symbol_left']; ?><?=$product->price * $curr['value'];?><?= $curr['symbol_right']; ?></li>
+                        <li class="menu-cart-item-price">{{ $curr['symbol_left'] . $product->price * $curr['value'] . $curr['symbol_right']; }}</li>
                         <li class="menu-cart-item-ingredients italic">
-                            <span><?= $product->ingredients; ?></span>
+                            <span>{{ $product->ingredients; }}</span>
                         </li>
                     </ul>
-                    <?php endif; ?>
-                <?php endforeach; ?>
+                    @@ endif;
+                @@ endforeach;
             </div>
-            <?php endforeach; ?>
+            @@ endforeach;
         </section>
 
     </div>
 </section>
-<?php endif; ?>
+<!-- endif -->
